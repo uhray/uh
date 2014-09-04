@@ -88,8 +88,6 @@ function doCommand() {
 
   args = cmd.match(/"[^"]+"|[^"^ ]+/g);
   cmd = args.shift();
-  console.log('cmd', cmd);
-  console.log('args: %j', args);
   child.spawn(cmd, args, { stdio: 'inherit' });
 }
 
