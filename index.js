@@ -5,7 +5,8 @@ var argv = require('minimist')(process.argv.slice(2)),
     fs = require('fs'),
     rl = require('readline-sync'),
     child = require('child_process'),
-    cfgfile = argv.config || argv.c  || path.join(__dirname, '_config.json'),
+    cfgfile = argv.config || argv.c ||
+              path.join(process.env.HOME, '.uh.config.json'),
     cfg = get_config(),
     proj = argv._.shift(),
     help = argv.h || argv.help;
