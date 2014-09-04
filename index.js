@@ -129,19 +129,17 @@ function delete_project() {
 }
 
 function create_project() {
-  var name, description, dir;
+  var name, description;
 
   while (!name) {
     while (!name) name = rl.question('Project name: ');
     if (cfg.projects[name]) name = console.log('name `%s` is taken', name);
   }
   while (!description) description = rl.question('Project description: ');
-  while (!dir) dir = rl.question('Project directory: ');
 
   cfg.projects[name] = {
     info : {
       description: description,
-      dir: dir
     }
   }
 
